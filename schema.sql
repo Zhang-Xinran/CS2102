@@ -54,20 +54,6 @@ create table Full_time_emp(
 
 
 
-create table Part_time_instructors(
-eid integer primary key references Instructors
-    references Part_time_Emp
-      on delete cascade
-      on update cascade
-);
-
-create table Full_time_instructors(
-  eid integer primary key references Instructors
-      references Full_time_Emp
-      on delete cascade
-      on update cascade
-);
-
 
 create table Administrators(
   eid integer primary key references Full_time_Emp
@@ -91,6 +77,20 @@ create table Instructors(
       on delete cascade
       on update cascade,
   area_name text NOT NULL references Course_areas 
+);
+
+create table Part_time_instructors(
+eid integer primary key references Instructors
+    references Part_time_Emp
+      on delete cascade
+      on update cascade
+);
+
+create table Full_time_instructors(
+  eid integer primary key references Instructors
+      references Full_time_Emp
+      on delete cascade
+      on update cascade
 );
 
 create table Credit_cards(
