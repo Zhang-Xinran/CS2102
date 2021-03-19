@@ -1,7 +1,7 @@
-drop table if exsits Credit_cards, Customers, Course_packages, Buys, Owns, Registers, Redeems, Cancels;
-drop table if exsits Course_areas, Courses, Rooms, Sessions, Offerings;
-drop table if exsits Employees, Pay_slips, Part_time_emp, Full_time_emp, Part_time_instructors;
-drop table if exsits Instructors, Full_time_instructors, Administrators, Managers, Specializes;
+drop table if exists Credit_cards, Customers, Course_packages, Buys, Owns, Registers, Redeems, Cancels;
+drop table if exists Course_areas, Courses, Rooms, Sessions, Offerings;
+drop table if exists Employees, Pay_slips, Part_time_emp, Full_time_emp, Part_time_instructors;
+drop table if exists Instructors, Full_time_instructors, Administrators, Managers, Specializes;
 
 create table Credit_cards(
   card_number text primary key,
@@ -115,7 +115,8 @@ create table Offerings(
   target_number_registrations integer not null,
   primary key (course_id,launch_date),
   foreign key (course_id) references Courses
-    on DELETE CASCADE on UPDATE CASCADE
+    on delete cascade
+    on update cascade
 );
 
 
@@ -124,7 +125,7 @@ create table Rooms(
   floor integer not null,
   room_number integer not null,
   seating_capacity integer,
-  UNIQUE (floor, room_number)
+  unique (floor, room_number)
 );
 
 create table Sessions(
@@ -140,10 +141,10 @@ create table Sessions(
   eid integer,
   primary key (course_id, launch_date, sid),
   unique(date, start_time, eid),
-  unique(course_id, launch_date, session_date, start_time)
+  unique(course_id, launch_date, session_date, start_time),
   foreign key (course_id,launch_date) references Offerings(course_id,launch_date)
       on delete cascade,
-  foreign key (rid) references Rooms(rid)
+  foreign key (rid) references Rooms(rid),
   foreign key (eid) references Instructors(eid)
 );
 
@@ -190,7 +191,7 @@ create table Full_time_emp(
 create table Instructors(
   eid integer primary key references Employees
       on delete cascade
-      on update cascase,
+      on update cascade,
   area_name text NOT NULL references Course_areas 
 );
 
