@@ -35,6 +35,26 @@ create table Owns(
   primary key (cust_id, card_number)
 );
 
+create table Sessions(
+  sid integer,
+  session_date date not null,
+  start_time integer not null
+      check(start_time>=9),
+  end_time integer not null
+      check(end_time<=18 and end_time>start_time),
+  launch_date date,
+  course_id integer,
+  rid integer not null,
+  eid integer,
+  primary key (course_id, launch_date, sid),
+  unique(session_date, start_time, eid),
+  unique(course_id, launch_date, session_date, start_time),
+  foreign key (course_id,launch_date) references Offerings(course_id,launch_date)
+      on delete cascade,
+  foreign key (rid) references Rooms(rid),
+  foreign key (eid) references Instructors(eid)
+);
+
 create table Buys(
   buy_date date,
   package_id int,
@@ -103,7 +123,6 @@ create table Courses(
   foreign key (area_name) references Course_areas(area_name) 
 );
 
-
 create table Offerings(
   launch_date date,
   course_id integer,
@@ -119,33 +138,12 @@ create table Offerings(
     on update cascade
 );
 
-
 create table Rooms(
   rid integer PRIMARY KEY,
   floor integer not null,
   room_number integer not null,
   seating_capacity integer,
   unique (floor, room_number)
-);
-
-create table Sessions(
-  sid integer,
-  session_date date not null,
-  start_time integer not null
-      check(start_time>=9),
-  end_time integer not null
-      check(end_time<=18 and end_time>start_time),
-  launch_date date,
-  course_id integer,
-  rid integer not null,
-  eid integer,
-  primary key (course_id, launch_date, sid),
-  unique(date, start_time, eid),
-  unique(course_id, launch_date, session_date, start_time),
-  foreign key (course_id,launch_date) references Offerings(course_id,launch_date)
-      on delete cascade,
-  foreign key (rid) references Rooms(rid),
-  foreign key (eid) references Instructors(eid)
 );
 
 create table Employees(
@@ -170,11 +168,11 @@ create table Pay_slips(
   eid integer,
   payment_date date,
   amount decimal(5,2) not null
-      check(amount>0),
+      check (amount>0),
   num_work_hours numeric not null
-      check(num_work_hours>0),
+      check (num_work_hours > 0),
   num_work_days integer not null
-      check((num_work_days>=0)and(num_work_days<=31)),
+      check ((num_work_days >= 0) and (num_work_days <= 31)),
   primary key (eid, payment_date),
   foreign key (eid) references Employees
       on delete cascade
