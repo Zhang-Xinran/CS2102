@@ -1,7 +1,7 @@
 drop table if exists Credit_cards, Customers, Course_packages, Buys, Owns, Registers, Redeems, Cancels cascade;
-drop table cascade if exists Course_areas, Courses, Rooms, Sessions, Offerings;
-drop table cascade if exists Employees, Pay_slips, Part_time_emp, Full_time_emp, Part_time_instructors;
-drop table cascade if exists Instructors, Full_time_instructors, Administrators, Managers, Specializes;
+drop table if exists Course_areas, Courses, Rooms, Sessions, Offerings cascade;
+drop table if exists Employees, Pay_slips, Part_time_emp, Full_time_emp, Part_time_instructors cascade;
+drop table if exists Instructors, Full_time_instructors, Administrators, Managers, Specializes cascade;
 
 
 create table Rooms(
@@ -43,14 +43,12 @@ create table Pay_slips(
   foreign key (eid) references Employees
       on delete cascade
       on update cascade
-      on drop cascade
 );
 
 create table Full_time_emp(
   eid integer primary key references Employees
       on delete cascade
-      on update cascade
-      on drop cascade,
+      on update cascade,
   monthly_salary decimal(5,2) not null
 );
 
