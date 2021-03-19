@@ -1,4 +1,4 @@
-drop table Credit_cards, Customers, Couser_packages, Buys, Owns, Registers, Redeems, Cancels if exsits;
+drop table Credit_cards, Customers, Course_packages, Buys, Owns, Registers, Redeems, Cancels if exsits;
 drop table Course_areas,Courses,Rooms,Sessions,Offerings if exsits;
 drop table Employees,For,Pay_slips,Part_time_emp,Full_time_emp,Part_time_instructors if exsits;
 drop table Instructors, Full_time_instructors, Administrators, Managers, Specializes if exsits;
@@ -26,6 +26,15 @@ create table Course_packages(
   price decimal(5, 2) not null
 );
 
+create table Owns(
+  from_date date not null,
+  card_number text unique,
+  cust_id int,
+  foreign key card_number references Credit_cards,
+  foreign key cust_id references Customers,
+  primary key (cust_id, card_number)
+);
+
 create table Buys(
   buy_date date,
   package_id int,
@@ -37,14 +46,7 @@ create table Buys(
   primary key (buy_date, cust_id, card_number, package_id)
 );
 
-create table Owns(
-  from_date date not null,
-  card_number text unique,
-  cust_id int,
-  foreign key card_number references Credit_cards,
-  foreign key cust_id references Customers,
-  primary key (cust_id, card_number)
-);
+
 
 create table Registers(
   registeration_date date,
