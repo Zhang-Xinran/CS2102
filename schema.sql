@@ -30,8 +30,8 @@ create table Owns(
   from_date date not null,
   card_number text unique,
   cust_id int,
-  foreign key card_number references Credit_cards,
-  foreign key cust_id references Customers,
+  foreign key (card_number) references Credit_cards,
+  foreign key (cust_id) references Customers,
   primary key (cust_id, card_number)
 );
 
@@ -42,7 +42,7 @@ create table Buys(
   cust_id int,
   num_remaining_redemptions int not null,
   foreign key (cust_id, card_number) references Owns,
-  foreign key package_id references Course_packages,
+  foreign key (package_id) references Course_packages,
   primary key (buy_date, cust_id, card_number, package_id)
 );
 
@@ -83,7 +83,7 @@ create table Cancels(
   sid int,
   launch_date date,
   course_id integer,
-  foreign key cust_id references Customers,
+  foreign key (cust_id) references Customers,
   foreign key (course_id, launch_date, sid) references Sessions,
   primary key (cancellation_date, cust_id, sid)
 );
@@ -115,7 +115,8 @@ create table Offerings(
   seating_capacity integer not null,
   target_number_registrations integer not null,
   primary key (course_id,launch_date),
-  foreign key (course_id) references Courses on DELETE CASCADE on UPDATE CASCADE
+  foreign key (course_id) references Courses
+    on DELETE CASCADE on UPDATE CASCADE
 );
 
 
@@ -141,79 +142,80 @@ create table Sessions(
   primary key (course_id, launch_date, sid),
   unique(date, start_time, eid),
   unique(course_id, launch_date, session_date, start_time)
-  foreign key (course_id,launch_date) references Offerings(course_id,launch_date) on delete cascade,
-  foreign KEY (rid) references Rooms(rid)
-  foreign KEY (eid) references Instructors(eid)
+  foreign key (course_id,launch_date) references Offerings(course_id,launch_date)
+      on delete cascade,
+  foreign key (rid) references Rooms(rid)
+  foreign key (eid) references Instructors(eid)
 );
 
 create table Employees(
-    eid integer primary key,
-    phone integer unique not null,
-    name  text not null,
-    address text,
-    email text unique not null,
-    join_date date not null,
-    depart_date date
+  eid integer primary key,
+  phone integer unique not null,
+  name  text not null,
+  address text,
+  email text unique not null,
+  join_date date not null,
+  depart_date date
 );
 
 
 create table Pay_slips(
-    payment_date date,
-    amount decimal(5,2) not null
-           check(amount>0),
-    num_work_hours numeric not null
-                   check(num_work_hours>0),
-    num_work_days integer not null
-                   check((num_work_days>=0)and(num_work_days<=31)),
-    primary key(eid,payment_date),
-    foreign key(eid)references Employees
-                    on delete cascade
-                    on update cascade
+  payment_date date,
+  amount decimal(5,2) not null
+      check(amount>0),
+  num_work_hours numeric not null
+      check(num_work_hours>0),
+  num_work_days integer not null
+      check((num_work_days>=0)and(num_work_days<=31)),
+  primary key(eid,payment_date),
+  foreign key(eid)references Employees
+      on delete cascade
+      on update cascade
 );
 
 create table Part_time_emp(
-    eid integer primary key references Employees
-        on delete cascade
-        on update cascade,
-    hourly_rate decimal(5,2) not null
+  eid integer primary key references Employees
+      on delete cascade
+      on update cascade,
+  hourly_rate decimal(5,2) not null
 );
 
 create table Full_time_emp(
-    eid integer primary key references Employees
-        on delete cascade
-        on update cascade,
-    monthly_salary decimal(5,2) not null
+  eid integer primary key references Employees
+      on delete cascade
+      on update cascade,
+  monthly_salary decimal(5,2) not null
 );
 
 create table Part_time_instructors(
-  eid integer primary key references Instructors
-      references Part_time_Emp
-  on delete cascade
-            on update cascade
+eid integer primary key references Instructors
+    references Part_time_Emp
+      on delete cascade
+      on update cascade
 );
 
 create table Instructors(
   eid integer primary key references Employees
-    on delete cascade
-    on update cascase,
+      on delete cascade
+      on update cascase,
   area_name text NOT NULL references Course_areas 
 );
 
 create table Full_time_instructors(
   eid integer primary key references Instructors
-    references Full_time_Emp
-    on delete cascade
-    on update cascade
+      references Full_time_Emp
+      on delete cascade
+      on update cascade
 );
 
 
 create table Administrators(
   eid integer primary key references Full_time_Emp
-    on delete cascade
-    on update cascade
+      on delete cascade
+      on update cascade
 );
 
 create table Managers(
   eid integer primary key references Full_time_Emp
-    on delete cascade
+      on delete cascade
 );
