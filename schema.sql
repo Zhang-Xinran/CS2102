@@ -52,12 +52,7 @@ create table Full_time_emp(
   monthly_salary decimal(5,2) not null
 );
 
-create table Instructors(
-  eid integer primary key references Employees
-      on delete cascade
-      on update cascade,
-  area_name text NOT NULL references Course_areas 
-);
+
 
 create table Part_time_instructors(
 eid integer primary key references Instructors
@@ -83,6 +78,19 @@ create table Administrators(
 create table Managers(
   eid integer primary key references Full_time_Emp
       on delete cascade
+);
+
+create table Course_areas(
+  area_name text primary key,
+  eid integer not null,
+  foreign key (eid) references Managers(eid)
+);
+
+create table Instructors(
+  eid integer primary key references Employees
+      on delete cascade
+      on update cascade,
+  area_name text NOT NULL references Course_areas 
 );
 
 create table Credit_cards(
@@ -115,12 +123,6 @@ create table Owns(
   foreign key (card_number) references Credit_cards,
   foreign key (cust_id) references Customers,
   primary key (cust_id, card_number)
-);
-
-create table Course_areas(
-  area_name text primary key,
-  eid integer not null,
-  foreign key (eid) references Managers(eid)
 );
 
 create table Courses(
