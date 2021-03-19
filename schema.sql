@@ -1,7 +1,7 @@
-drop table Credit_cards, Customers, Couser_packages, Buys, Owns, Registers, Redeems, Cancels;
-drop table Course_areas,Courses,Rooms,Sessions,Offerings;
-drop table Employees,For,Pay_slips,Part_time_emp,Full_time_emp,Part_time_instructors;
-drop table Instructors, Full_time_instructors, Administrators, Managers, Specializes;
+drop table Credit_cards, Customers, Couser_packages, Buys, Owns, Registers, Redeems, Cancels if exsits;
+drop table Course_areas,Courses,Rooms,Sessions,Offerings if exsits;
+drop table Employees,For,Pay_slips,Part_time_emp,Full_time_emp,Part_time_instructors if exsits;
+drop table Instructors, Full_time_instructors, Administrators, Managers, Specializes if exsits;
 
 create table Credit_cards(
   card_number text primary key,
@@ -155,7 +155,6 @@ create table Employees(
 );
 
 
-// payment, day and hours: numeric or integer
 create table Pay_slips(
     payment_date date,
     amount decimal(5,2) not null
