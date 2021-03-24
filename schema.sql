@@ -200,10 +200,9 @@ create table Registers(
   card_number text,
   cust_id int,
   sid int,
-  launch_date date,
-  course_id integer,
+  offering_id integer,
   foreign key (cust_id, card_number) references Owns,
-  foreign key (course_id, launch_date, sid) references Sessions,
+  foreign key (offering_id, sid) references Sessions,
   primary key (registeration_date, cust_id, card_number, sid)
 );
 
@@ -214,10 +213,9 @@ create table Redeems(
   card_number text,
   cust_id int,
   sid int,
-  launch_date date,
-  course_id integer,
+  offering_id integer,
   foreign key (buy_date, cust_id, card_number, package_id) references Buys,
-  foreign key (course_id, launch_date, sid) references Sessions,
+  foreign key (offering_id, sid) references Sessions,
   primary key (redemption_date, buy_date, cust_id, card_number, package_id, sid)
 
 );
@@ -228,9 +226,8 @@ create table Cancels(
   package_credit int,
   cust_id int,
   sid int,
-  launch_date date,
-  course_id integer,
+  offering_id integer,
   foreign key (cust_id) references Customers,
-  foreign key (course_id, launch_date, sid) references Sessions,
+  foreign key (offering_id, sid) references Sessions,
   primary key (cancellation_date, cust_id, sid)
 );
