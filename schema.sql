@@ -81,7 +81,7 @@ create table Specializes(
   eid integer not null references Instructors
   	  on delete cascade
   	  on update cascade,
-  area_name not null references Course_areas,
+  area_name text not null references Course_areas,
   primary key (eid, area_name)
 );
 
