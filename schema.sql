@@ -74,8 +74,15 @@ create table Instructors(
   eid integer not null references Employees
       on delete cascade
       on update cascade,
-  area_name text[] NOT NULL references Course_areas,
   primary key (eid)
+);
+
+create table Specializes(
+  eid integer not null references Employees
+  	  on delete cascade
+  	  on update cascade,
+  area_name not null references Course_areas,
+  primary key (eid, area_name)
 );
 
 create table Part_time_instructors(
