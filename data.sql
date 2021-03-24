@@ -24,25 +24,25 @@ insert into Customers (cust_id, address, phone, name, email) values (10, '728-32
 
 -- insert into Owns
 insert into Owns (cust_id, card_number, from_date)
-values (1, '4470361716237', '2021-01-01')
+values (1, '4470361716237', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (2, '4532601368531', '2021-01-01')
+values (2, '4532601368531', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (3, '4929695056073', '2021-01-01')
+values (3, '4929695056073', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (4, '4532141317790', '2021-01-01')
+values (4, '4532141317790', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (5, '4929521169516262', '2021-01-01')
+values (5, '4929521169516262', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (6, '4539530426470074', '2021-01-01')
+values (6, '4539530426470074', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (7, '4716136511273', '2021-01-01')
+values (7, '4716136511273', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (8, '4532758798381127', '2021-01-01')
+values (8, '4532758798381127', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (9, '4556076811840', '2021-01-01')
+values (9, '4556076811840', '2021-01-01');
 insert into Owns (cust_id, card_number, from_date)
-values (10, '4716030910084', '2021-01-01')
+values (10, '4716030910084', '2021-01-01');
 
 -- insert into Course_packages
 insert into Course_packages (package_id, name, sale_start_date, sale_end_date, num_free_registration, price)
