@@ -163,6 +163,7 @@ create table Sessions(
   course_id integer,
   rid integer not null,
   eid integer,
+  offering_id integer not null,
   -- primary key (course_id, launch_date, sid),
   primary key (offering_id, sid),
   unique(session_date, start_time, eid),
@@ -173,7 +174,7 @@ create table Sessions(
   	on delete cascade,
   foreign key (rid) references Rooms(rid),
   foreign key (eid) references Instructors(eid),
-  check ((start_time < 12 and end_time <= 12) or start_time >= 14)
+    check ((start_time < 12 and end_time <= 12) or start_time >= 14)
 );
 
 create table Buys(
