@@ -108,7 +108,7 @@ create table Credit_cards(
 create table Customers(
   cust_id int primary key,
   address text,
-  phone int unique not null,
+  phone text unique not null,
   name text not null,
   email text unique not null
 );
