@@ -78,7 +78,7 @@ create table Instructors(
 );
 
 create table Specializes(
-  eid integer not null references Employees
+  eid integer not null references Instructors
   	  on delete cascade
   	  on update cascade,
   area_name not null references Course_areas,
