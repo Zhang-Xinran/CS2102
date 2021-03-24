@@ -71,10 +71,12 @@ create table Course_areas(
 );
 
 create table Instructors(
-  eid integer primary key references Employees
+  eid integer not null references Employees
       on delete cascade
       on update cascade,
-  area_name text NOT NULL references Course_areas 
+  area_name text NOT NULL references Course_areas,
+  primary key (eid, area_name)
+
 );
 
 create table Part_time_instructors(
@@ -127,13 +129,14 @@ create table Courses(
   course_id integer primary key,
   title text unique not null,
   duration integer
-    check (duration >=0),
+    check (duration >= 0),
   description text,
   area_name text not null,
   foreign key (area_name) references Course_areas(area_name) 
 );
 
 create table Offerings(
+  offering_id integer primary key,
   launch_date date,
   course_id integer,
   fees decimal(5,2) not null,
@@ -142,30 +145,35 @@ create table Offerings(
   registration_deadline date not null,
   seating_capacity integer not null,
   target_number_registrations integer not null,
-  primary key (course_id,launch_date),
+  eid INTEGER NOT NULL,
   foreign key (course_id) references Courses
     on delete cascade
-    on update cascade
+    on update cascade,
+  foreign key (eid) references Administrators(eid)
 );
 
 create table Sessions(
   sid integer,
   session_date date not null,
   start_time integer not null
-      check(start_time>=9),
+      check(start_time >= 9),
   end_time integer not null
-      check(end_time<=18 and end_time>start_time),
+      check(end_time <= 18 and end_time > start_time),
   launch_date date,
   course_id integer,
   rid integer not null,
   eid integer,
-  primary key (course_id, launch_date, sid),
+  -- primary key (course_id, launch_date, sid),
+  primary key (offering_id, sid),
   unique(session_date, start_time, eid),
   unique(course_id, launch_date, session_date, start_time),
-  foreign key (course_id,launch_date) references Offerings(course_id,launch_date)
-      on delete cascade,
+  -- foreign key (course_id, launch_date) references Offerings(course_id, launch_date)
+  --     on delete cascade,
+  foreign key (offering_id) references Offerings
+  	on delete cascade,
   foreign key (rid) references Rooms(rid),
-  foreign key (eid) references Instructors(eid)
+  foreign key (eid) references Instructors(eid),
+  check ((start_time < 12 and end_time <= 12) or start_time >= 14)
 );
 
 create table Buys(

@@ -14,7 +14,7 @@ where S.rname = R.rname and R.area = C.area and C.cname = 'Bob'
 
 
 /* 
-Question 2
+Question 2 
 */
 create or replace view v2 (cname) AS
 select cname
@@ -161,7 +161,7 @@ where (
 	    (
 		select max(price) - min(price) from (select price from Sells where Sells.rname = R.rname) as Price
 	    ) >= all (
-	        select max(price) - min(price) from (select rname, price from Sells) as Price group by rname
+	        select max(price) - min(price) from (select rname, price from Sells where Sells.rname <> R.rname) as Price group by rname
 	    )
        )
     )  
