@@ -49,7 +49,7 @@ create table Full_time_emp(
   eid integer primary key references Employees
       on delete cascade
       on update cascade,
-  monthly_salary decimal(5,2) not null
+  monthly_rate decimal(5,2) not null
 );
 
 

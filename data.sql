@@ -196,7 +196,7 @@ insert into Part_time_emp (eid, hourly_rate) values
 (60, 8.15);
 
 -- insert into Adminstrators
-insert into Aministrators (eid) values (11),(12),(13),(14),(15),(16),(17),(18),(19),(20);
+insert into Administrators (eid) values (11),(12),(13),(14),(15),(16),(17),(18),(19),(20);
 
 -- insert into Managers
 insert into Managers (eid) values (21),(22),(23),(24),(25),(26),(27),(28),(29),(30);
