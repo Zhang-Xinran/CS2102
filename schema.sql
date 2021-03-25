@@ -14,7 +14,7 @@ create table Rooms(
 
 create table Employees(
   eid integer primary key,
-  phone integer unique not null,
+  phone text unique not null,
   name  text not null,
   address text,
   email text unique not null,
