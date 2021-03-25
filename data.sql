@@ -226,16 +226,16 @@ insert into Course_areas (area_name, eid) values ('Operating Systems', 22);
 insert into Course_areas (area_name, eid) values ('Media Computing', 22);
 
 -- insert into Rooms
-insert into Rooms (rid, floor, unit, seating_capacity) values (1, 1, 1, 29);
-insert into Rooms (rid, floor, unit, seating_capacity) values (2, 1, 2, 24);
-insert into Rooms (rid, floor, unit, seating_capacity) values (3, 1, 3, 75);
-insert into Rooms (rid, floor, unit, seating_capacity) values (4, 1, 4, 27);
-insert into Rooms (rid, floor, unit, seating_capacity) values (5, 1, 5, 73);
-insert into Rooms (rid, floor, unit, seating_capacity) values (6, 2, 1, 60);
-insert into Rooms (rid, floor, unit, seating_capacity) values (7, 2, 2, 41);
-insert into Rooms (rid, floor, unit, seating_capacity) values (8, 2, 3, 47);
-insert into Rooms (rid, floor, unit, seating_capacity) values (9, 2, 4, 68);
-insert into Rooms (rid, floor, unit, seating_capacity) values (10, 2, 5, 45);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (1, 1, 1, 29);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (2, 1, 2, 24);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (3, 1, 3, 75);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (4, 1, 4, 27);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (5, 1, 5, 73);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (6, 2, 1, 60);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (7, 2, 2, 41);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (8, 2, 3, 47);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (9, 2, 4, 68);
+insert into Rooms (rid, floor, room_number, seating_capacity) values (10, 2, 5, 45);
 
 -- insert into Courses
 insert into Courses (course_id, title, duration, description, area_name) values (1, 'Basic Data Structure', 2, 'a course', 'Data Structures and Algorithms');
