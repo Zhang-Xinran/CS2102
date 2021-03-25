@@ -238,26 +238,26 @@ insert into Rooms (rid, floor, unit, seating_capacity) values (9, 2, 4, 68);
 insert into Rooms (rid, floor, unit, seating_capacity) values (10, 2, 5, 45);
 
 -- insert into Courses
-insert into Courses (courseid, title, duration, description, area_name) values (1, 'Basic Data Structure', 2, 'a course', 'Data Structures and Algorithms');
-insert into Courses (courseid, title, duration, description, area_name) values (2, 'Basic Media Computing', 3, 'a course', 'Media Computing');
-insert into Courses (courseid, title, duration, description, area_name) values (3, 'Software Engineering I', 1, 'a course', 'Software Engineering');
-insert into Courses (courseid, title, duration, description, area_name) values (4, 'Advanced SQL', 1, 'a course', 'Database Systems');
-insert into Courses (courseid, title, duration, description, area_name) values (5, 'Networking I', 2, 'a course', 'Networking');
-insert into Courses (courseid, title, duration, description, area_name) values (6, 'Algorithms I', 1, 'a course', 'Data Structures and Algorithms');
-insert into Courses (courseid, title, duration, description, area_name) values (7, 'Basic SQL', 2, 'a course', 'Database Systems');
-insert into Courses (courseid, title, duration, description, area_name) values (8, 'Python Programming', 3, 'a course', 'Programming Methodology');
-insert into Courses (courseid, title, duration, description, area_name) values (9, 'Computer Security I', 3, 'a course', 'Computer Security');
-insert into Courses (courseid, title, duration, description, area_name) values (10, 'Parallel Programming I', 3, 'a course', 'Parallel Programming');
-insert into Courses (courseid, title, duration, description, area_name) values (11, 'Algorithms II', 1, 'a course', 'Data Structures and Algorithms');
-insert into Courses (courseid, title, duration, description, area_name) values (12, 'Software Engineering II', 2, 'a course', 'Software Engineering');
-insert into Courses (courseid, title, duration, description, area_name) values (13, 'Software Engineering III', 1, 'a course', 'Software Engineering');
-insert into Courses (courseid, title, duration, description, area_name) values (14, 'Computer Security II', 3, 'a course', 'Computer Security');
-insert into Courses (courseid, title, duration, description, area_name) values (15, 'Intermediate SQL', 3, 'a course', 'Database Systems');
-insert into Courses (courseid, title, duration, description, area_name) values (16, 'Machine Learning I', 3, 'a course', 'Machine Learning');
-insert into Courses (courseid, title, duration, description, area_name) values (17, 'Java Programming', 1, 'a course', 'Programming Methodology');
-insert into Courses (courseid, title, duration, description, area_name) values (18, 'Machine Learning II', 3, 'a course', 'Machine Learning');
-insert into Courses (courseid, title, duration, description, area_name) values (19, 'Advanced Software Engineering', 1, 'a course', 'Software Engineering');
-insert into Courses (courseid, title, duration, description, area_name) values (20, 'Basic Operating Systems', 2, 'a course', 'Operating Systems');
+insert into Courses (course_id, title, duration, description, area_name) values (1, 'Basic Data Structure', 2, 'a course', 'Data Structures and Algorithms');
+insert into Courses (course_id, title, duration, description, area_name) values (2, 'Basic Media Computing', 3, 'a course', 'Media Computing');
+insert into Courses (course_id, title, duration, description, area_name) values (3, 'Software Engineering I', 1, 'a course', 'Software Engineering');
+insert into Courses (course_id, title, duration, description, area_name) values (4, 'Advanced SQL', 1, 'a course', 'Database Systems');
+insert into Courses (course_id, title, duration, description, area_name) values (5, 'Networking I', 2, 'a course', 'Networking');
+insert into Courses (course_id, title, duration, description, area_name) values (6, 'Algorithms I', 1, 'a course', 'Data Structures and Algorithms');
+insert into Courses (course_id, title, duration, description, area_name) values (7, 'Basic SQL', 2, 'a course', 'Database Systems');
+insert into Courses (course_id, title, duration, description, area_name) values (8, 'Python Programming', 3, 'a course', 'Programming Methodology');
+insert into Courses (course_id, title, duration, description, area_name) values (9, 'Computer Security I', 3, 'a course', 'Computer Security');
+insert into Courses (course_id, title, duration, description, area_name) values (10, 'Parallel Programming I', 3, 'a course', 'Parallel Programming');
+insert into Courses (course_id, title, duration, description, area_name) values (11, 'Algorithms II', 1, 'a course', 'Data Structures and Algorithms');
+insert into Courses (course_id, title, duration, description, area_name) values (12, 'Software Engineering II', 2, 'a course', 'Software Engineering');
+insert into Courses (course_id, title, duration, description, area_name) values (13, 'Software Engineering III', 1, 'a course', 'Software Engineering');
+insert into Courses (course_id, title, duration, description, area_name) values (14, 'Computer Security II', 3, 'a course', 'Computer Security');
+insert into Courses (course_id, title, duration, description, area_name) values (15, 'Intermediate SQL', 3, 'a course', 'Database Systems');
+insert into Courses (course_id, title, duration, description, area_name) values (16, 'Machine Learning I', 3, 'a course', 'Machine Learning');
+insert into Courses (course_id, title, duration, description, area_name) values (17, 'Java Programming', 1, 'a course', 'Programming Methodology');
+insert into Courses (course_id, title, duration, description, area_name) values (18, 'Machine Learning II', 3, 'a course', 'Machine Learning');
+insert into Courses (course_id, title, duration, description, area_name) values (19, 'Advanced Software Engineering', 1, 'a course', 'Software Engineering');
+insert into Courses (course_id, title, duration, description, area_name) values (20, 'Basic Operating Systems', 2, 'a course', 'Operating Systems');
 
 -- insert into Offerings
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (1, '2020-01-22', 14, 489.34, '2021-03-13', '2020-08-07', '2020-02-23', 51, 50, 19);
