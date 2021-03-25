@@ -192,7 +192,7 @@ insert into Part_time_emp (eid, hourly_rate) values
 (56, 8.04),
 (57, 5.65),
 (58, 5.55),
-(59, 5.64)，
+(59, 5.64),
 (60, 8.15);
 
 -- insert into Adminstrators
@@ -201,6 +201,11 @@ insert into Administrators (eid) values (11),(12),(13),(14),(15),(16),(17),(18),
 -- insert into Managers
 insert into Managers (eid) values (21),(22),(23),(24),(25),(26),(27),(28),(29),(30);
 
+-- insert into Instructors
+insert into Instructors (eid) values 
+(1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(41),(42),(43),(44),(45),(46),(47),(48),(49),(50);
+
+
 -- insert into Full_time_instructors
 insert into Full_time_instructors (eid) values
 (1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
@@ -208,10 +213,6 @@ insert into Full_time_instructors (eid) values
 -- insert into Part_time_instructors
 insert into Part_time_instructors (eid) values 
 (41),(42),(43),(44),(45),(46),(47),(48),(49),(50);
-
--- insert into Instructors
-insert into Instructors (eid) values 
-(1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(41),(42),(43),(44),(45),(46),(47),(48),(49),(50);
 
 -- insert into Course_areas
 insert into Course_areas (area_name, eid) values ('Database Systems', 26);
@@ -290,7 +291,7 @@ insert into Sessions (sid, session_date, start_time, end_time, launch_date, cour
 insert into Sessions (sid, session_date, start_time, end_time, launch_date, course_id, rid, eid, offering_id) values (16, '2020-12-14', 10, 12, '2020-02-20', 20, 4, 6, 8); 
 insert into Sessions (sid, session_date, start_time, end_time, launch_date, course_id, rid, eid, offering_id) values (17, '2020-08-13', 14, 17, '2020-01-16', 16, 3, 45, 9);  
 insert into Sessions (sid, session_date, start_time, end_time, launch_date, course_id, rid, eid, offering_id) values (18, '2020-10-12', 9, 12, '2020-01-16', 16, 9, 5, 9);  
-insert into Sessions (sid, session_date, start_time, end_time, launch_date, course_id, rid, eid, offering_id) values (19, '2020-06-02', 13, 16, '2020-02-16', 10, 1, 49, 10);  
+insert into Sessions (sid, session_date, start_time, end_time, launch_date, course_id, rid, eid, offering_id) values (19, '2020-06-02', 14, 16, '2020-02-16', 10, 1, 49, 10);  
 insert into Sessions (sid, session_date, start_time, end_time, launch_date, course_id, rid, eid, offering_id) values (20, '2020-12-24', 9, 12, '2021-02-16', 10, 4, 9, 10); 
 
 
