@@ -196,23 +196,22 @@ insert into Part_time_emp (eid, hourly_rate) values
 (60, 8.15);
 
 -- insert into Adminstrators
-insert into Administrators (eid) values (11),(12),(13),(14),(15),(16),(17),(18),(19),(20);
+insert into Administrators (eid) values (11), (12), (13), (14), (15), (16), (17), (18), (19), (20);
 
 -- insert into Managers
-insert into Managers (eid) values (21),(22),(23),(24),(25),(26),(27),(28),(29),(30);
+insert into Managers (eid) values (21), (22), (23), (24), (25), (26), (27), (28), (29), (30);
 
 -- insert into Instructors
 insert into Instructors (eid) values 
-(1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(41),(42),(43),(44),(45),(46),(47),(48),(49),(50);
-
+(1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (41), (42), (43), (44), (45), (46), (47), (48), (49), (50);
 
 -- insert into Full_time_instructors
 insert into Full_time_instructors (eid) values
-(1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
+(1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
 
 -- insert into Part_time_instructors
 insert into Part_time_instructors (eid) values 
-(41),(42),(43),(44),(45),(46),(47),(48),(49),(50);
+(41), (42), (43), (44), (45), (46), (47), (48), (49), (50);
 
 -- insert into Course_areas
 insert into Course_areas (area_name, eid) values ('Database Systems', 26);
