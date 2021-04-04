@@ -14,7 +14,7 @@ create table Rooms(
 
 create table Employees(
   eid integer primary key,
-  phone integer unique not null,
+  phone text unique not null,
   name  text not null,
   address text,
   email text unique not null,
@@ -49,7 +49,7 @@ create table Full_time_emp(
   eid integer primary key references Employees
       on delete cascade
       on update cascade,
-  monthly_salary decimal(5,2) not null
+  monthly_rate decimal(5,2) not null
 );
 
 
@@ -106,7 +106,7 @@ create table Credit_cards(
 );
 
 create table Customers(
-  cust_id serial primary key,
+  cust_id int primary key,
   address text,
   phone text unique not null,
   name text not null,
@@ -114,7 +114,7 @@ create table Customers(
 );
 
 create table Course_packages(
-  package_id serial primary key,
+  package_id int primary key,
   name text not null,
   sale_start_date date not null,
   sale_end_date date not null,
@@ -125,14 +125,14 @@ create table Course_packages(
 create table Owns(
   from_date date not null,
   card_number text unique,
-  cust_id serial,
+  cust_id int,
   foreign key (card_number) references Credit_cards,
   foreign key (cust_id) references Customers,
   primary key (cust_id, card_number)
 );
 
 create table Courses(
-  course_id serial primary key,
+  course_id integer primary key,
   title text unique not null,
   duration integer
     check (duration >= 0),
@@ -142,22 +142,20 @@ create table Courses(
 );
 
 create table Offerings(
-  offering_id int primary key,
+  offering_id integer primary key,
   launch_date date,
-  course_id serial,
+  course_id integer,
   fees decimal(5,2) not null,
   start_date date not null,
   end_date date not null,
   registration_deadline date not null,
   seating_capacity integer not null,
   target_number_registrations integer not null,
-  eid integer not null,
-  unique(course_id, launch_date),      
+  eid INTEGER NOT NULL,
   foreign key (course_id) references Courses
     on delete cascade
     on update cascade,
-  foreign key (eid) references Administrators(eid),
-  check (launch_date <= start_date - 10*interval '1' day)  
+  foreign key (eid) references Administrators(eid)
 );
 
 create table Sessions(
@@ -167,39 +165,40 @@ create table Sessions(
       check(start_time >= 9),
   end_time integer not null
       check(end_time <= 18 and end_time > start_time),
+  launch_date date,
+  course_id integer,
   rid integer not null,
   eid integer,
   offering_id integer not null,
+  -- primary key (course_id, launch_date, sid),
   primary key (offering_id, sid),
   unique(session_date, start_time, eid),
-  unique(offering_id, session_date, start_time),
-  unique(rid, session_date, start_time),  
+  unique(course_id, launch_date, session_date, start_time),
+  -- foreign key (course_id, launch_date) references Offerings(course_id, launch_date)
+  --     on delete cascade,
   foreign key (offering_id) references Offerings
   	on delete cascade,
   foreign key (rid) references Rooms(rid),
   foreign key (eid) references Instructors(eid),
-  check ((start_time < 12 and end_time <= 12) or start_time >= 14),
-  check (extract(dow from session_date) in (1,2,3,4,5)) 
+    check ((start_time < 12 and end_time <= 12) or start_time >= 14)
 );
-
 
 create table Buys(
   buy_date date,
   package_id int,
   card_number text,
-  cust_id serial,
+  cust_id int,
   num_remaining_redemptions int not null,
   foreign key (cust_id, card_number) references Owns,
   foreign key (package_id) references Course_packages,
-  primary key (buy_date, cust_id, card_number, package_id),
-  check (num_remaining_redemptions >=0)
+  primary key (buy_date, cust_id, card_number, package_id)
 );
 
 
 create table Registers(
   registeration_date date,
   card_number text,
-  cust_id serial,
+  cust_id int,
   sid int,
   offering_id integer,
   foreign key (cust_id, card_number) references Owns,
@@ -212,7 +211,7 @@ create table Redeems(
   buy_date date,
   package_id int,
   card_number text,
-  cust_id serial,
+  cust_id int,
   sid int,
   offering_id integer,
   foreign key (buy_date, cust_id, card_number, package_id) references Buys,
@@ -225,7 +224,7 @@ create table Cancels(
   cancellation_date date,
   refund_amount decimal(5, 2),
   package_credit int,
-  cust_id serial,
+  cust_id int,
   sid int,
   offering_id integer,
   foreign key (cust_id) references Customers,
