@@ -181,7 +181,7 @@ begin
 					coid, session_id);
 			if (select count(*) from Redeems R where R.cust_id = cid and R.offering_id = coid) = 1 then
 				update Buys
-			 		num_remaining_redemptions = num_remaining_redemptions - 1
+			 		set num_remaining_redemptions = num_remaining_redemptions - 1
 					where buy_date = available_package.buy_date and 
 						package_id = available_package.package_id and
 						card_number = available_package.card_number and
@@ -277,12 +277,12 @@ begin
 	end if;
 	if  payment_type = 1 then
 		update Registers
-			sid = new_sid
+			set sid = new_sid
 			where cust_id = cid and coid = offering_id;
 	end if;
 	if payment_type = 2 then
 		update Redeems
-			sid = new_sid
+			set sid = new_sid
 			where cust_id = cid and coid = offering_id;
 	end if;
 end;
