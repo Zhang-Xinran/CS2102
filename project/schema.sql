@@ -13,7 +13,7 @@ create table Rooms(
 );
 
 create table Employees(
-  eid integer primary key,
+  eid serial primary key,
   phone integer unique not null,
   name  text not null,
   address text,
@@ -34,11 +34,11 @@ create table Pay_slips(
   eid integer,
   payment_date date,
   amount decimal(5,2) not null
-      check (amount>0),
-  num_work_hours numeric not null
-      check (num_work_hours > 0),
-  num_work_days integer not null
-      check ((num_work_days >= 0) and (num_work_days <= 31)),
+      check (amount>=0),
+  num_work_hours numeric
+      check (num_work_hours >= 0 or num_work_hours is null),
+  num_work_days integer
+      check (((num_work_days >= 0) and (num_work_days <= 31)) or num_work_days is null),
   primary key (eid, payment_date),
   foreign key (eid) references Employees
       on delete cascade
@@ -62,19 +62,22 @@ create table Administrators(
 create table Managers(
   eid integer primary key references Full_time_Emp
       on delete cascade
+      on update cascade
 );
 
 create table Course_areas(
   area_name text primary key,
   eid integer not null,
   foreign key (eid) references Managers(eid)
+      on delete cascade
+      on update cascade
 );
 
 create table Instructors(
   eid integer not null references Employees
       on delete cascade
       on update cascade,
-  primary key (eid)
+   primary key (eid)
 );
 
 create table Specializes(
@@ -119,15 +122,16 @@ create table Course_packages(
   sale_start_date date not null,
   sale_end_date date not null,
   num_free_registration int not null,
-  price decimal(5, 2) not null
+  price decimal(5, 2) not null,
+  check(sale_end_date >= sale_start_date)
 );
 
 create table Owns(
   from_date date not null,
-  card_number text unique,
   cust_id serial,
-  foreign key (card_number) references Credit_cards,
-  foreign key (cust_id) references Customers,
+  card_number text unique,
+  foreign key (card_number) references Credit_cards on delete cascade on update cascade,
+  foreign key (cust_id) references Customers on delete cascade on update cascade,
   primary key (cust_id, card_number)
 );
 
@@ -138,7 +142,7 @@ create table Courses(
     check (duration >= 0),
   description text,
   area_name text not null,
-  foreign key (area_name) references Course_areas(area_name) 
+  foreign key (area_name) references Course_areas(area_name) on delete cascade on update cascade
 );
 
 create table Offerings(
@@ -156,11 +160,14 @@ create table Offerings(
   foreign key (course_id) references Courses
     on delete cascade
     on update cascade,
-  foreign key (eid) references Administrators(eid),
-  check (launch_date <= start_date - 10*interval '1' day)  
+  foreign key (eid) references Administrators(eid)
+    on delete cascade
+    on update cascade,
+  check (registration_deadline <= start_date - 10*interval '1' day)  
 );
 
 create table Sessions(
+  offering_id integer not null,
   sid integer,
   session_date date not null,
   start_time integer not null
@@ -169,15 +176,16 @@ create table Sessions(
       check(end_time <= 18 and end_time > start_time),
   rid integer not null,
   eid integer,
-  offering_id integer not null,
   primary key (offering_id, sid),
   unique(session_date, start_time, eid),
   unique(offering_id, session_date, start_time),
   unique(rid, session_date, start_time),  
   foreign key (offering_id) references Offerings
-  	on delete cascade,
-  foreign key (rid) references Rooms(rid),
-  foreign key (eid) references Instructors(eid),
+  	on delete cascade on update cascade,
+  foreign key (rid) references Rooms(rid)
+	on delete cascade on update cascade,
+  foreign key (eid) references Instructors(eid)
+	on delete cascade on update cascade,
   check ((start_time < 12 and end_time <= 12) or start_time >= 14),
   check (extract(dow from session_date) in (1,2,3,4,5)) 
 );
@@ -190,21 +198,25 @@ create table Buys(
   cust_id serial,
   num_remaining_redemptions int not null,
   foreign key (cust_id, card_number) references Owns,
-  foreign key (package_id) references Course_packages,
+  foreign key (package_id) references Course_packages
+      on delete cascade 
+      on update cascade,
   primary key (buy_date, cust_id, card_number, package_id),
   check (num_remaining_redemptions >=0)
 );
 
 
 create table Registers(
-  registeration_date date,
+  registration_date date,
   card_number text,
   cust_id serial,
-  sid int,
   offering_id integer,
+  sid int,
   foreign key (cust_id, card_number) references Owns,
-  foreign key (offering_id, sid) references Sessions,
-  primary key (registeration_date, cust_id, card_number, sid)
+  foreign key (offering_id, sid) references Sessions
+      on delete cascade 
+      on update cascade,
+  primary key (registration_date, cust_id, card_number, offering_id, sid)
 );
 
 create table Redeems(
@@ -213,12 +225,13 @@ create table Redeems(
   package_id int,
   card_number text,
   cust_id serial,
+  offering_id int,
   sid int,
-  offering_id integer,
   foreign key (buy_date, cust_id, card_number, package_id) references Buys,
-  foreign key (offering_id, sid) references Sessions,
-  primary key (redemption_date, buy_date, cust_id, card_number, package_id, sid)
-
+  foreign key (offering_id, sid) references Sessions
+      on delete cascade 
+      on update cascade,
+  primary key (redemption_date, buy_date, cust_id, card_number, package_id, offering_id, sid)
 );
 
 create table Cancels(
@@ -226,9 +239,11 @@ create table Cancels(
   refund_amount decimal(5, 2),
   package_credit int,
   cust_id serial,
+  offering_id int,
   sid int,
-  offering_id integer,
   foreign key (cust_id) references Customers,
-  foreign key (offering_id, sid) references Sessions,
+  foreign key (offering_id, sid) references Sessions
+       on delete cascade 
+      on update cascade,
   primary key (cancellation_date, cust_id, sid)
 );
