@@ -1053,7 +1053,7 @@ BEGIN
 
     select I.cust_id as customer_id, B.name as customer_name, A.area_name as course_area, C.course_id, C.title as course_title, 
     O.launch_date, O.registration_deadline, O.fees
-    from interested_area A, inactive_customers I, courses C, offerings O, customers B, select * from get_remaining_seats_offering() as R
+    from interested_area A, inactive_customers I, courses C, offerings O, customers B, (select * from get_remaining_seats_offering()) as R
     where A.cust_id = I.cust_id and
     I.cust_id = B.cust_id and 
     A.area_name = C.area_name and
