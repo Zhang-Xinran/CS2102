@@ -163,7 +163,7 @@ create table Offerings(
   foreign key (eid) references Administrators(eid)
     on delete cascade
     on update cascade,
-  check (registration_deadline <= start_date - 10*interval '1' day)  
+  check (registration_deadline <= start_date - 10*interval '1' day)
 );
 
 create table Sessions(

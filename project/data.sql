@@ -321,6 +321,7 @@ insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offerin
 insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-07-02', 14, 17,  1, 49, 10);  
 insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-20', 9, 12,  4, 9, 10); 
 
-
+-- insert into Registers
+insert into Registers ()
 
 

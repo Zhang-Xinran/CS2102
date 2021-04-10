@@ -1,3 +1,24 @@
+drop function
+add_course_package, get_available_course_packages, buy_course_package,
+check_refundable, get_redeemed_session, get_redeemed_session_in_json, get_my_course_package,
+get_my_active_course_package, register_session,
+get_my_registered_sessions, get_my_registrations,
+get_payment_type, update_course_session,
+top_packages_sales, top_packages_unsorted, top_packages if exists;
+
+drop function
+limit_session_quota, limit_session_time, limit_session_per_person, limit_active_package_per_person;
+drop trigger
+limit_session_quota_in_registers on Registers;
+drop trigger
+limit_session_quota_in_redeems on Redeems;
+drop trigger
+limit_session_time_in_registers on Registers;
+drop trigger
+limit_session_time_in_redeems on Redeems;
+drop trigger
+limit_active_package_per_person_in_course_package on Course_packages;
+
 create or replace procedure add_course_package 
 	(package_name text, num_of_free_sessions integer, start_date date, end_date date, price decimal(5, 2))
 as $$
@@ -23,7 +44,7 @@ declare
 	num_free_registration int;
 begin
 	buy_date := (select current_date);
-	card := (select card_number from Owns C where C.cust_id = cid);
+	card := (select card_number from Owns where cust_id = cid order by from_date desc limit 1);
 	num_free_registration := (select CP.num_free_registration from Course_packages CP where CP.package_id = pid);
 	insert into Buys (buy_date, package_id, card_number, cust_id, num_remaining_redemptions) 
 		values (buy_date, pid, card, cid, num_free_registration);
@@ -165,7 +186,7 @@ begin
 	if (paymentMethod = 1) then
 		insert into Registers (registration_date, card_number, cust_id, offering_id, sid)
 			values ((select current_date),
-				(select card_number from Owns where cust_id = cid),
+				(select card_number from Owns where cust_id = cid order by from_date desc limit 1),
 				cid, coid, session_id);
 	else
 		available_package := (select get_my_active_course_package(cid));
@@ -296,8 +317,7 @@ begin
 	from (
 		select B.package_id, count(*)::int as count
 		from Buys B
-		where (select sale_start_date from Course_packages CP where CP.package_id = B.package_id) >= '2021-01-01'
-			and (select sale_start_date from Course_packages CP where CP.package_id = B.package_id) <= '2021-12-31'
+		where (select extract (year from (select sale_start_date from Course_packages CP where CP.package_id = B.package_id))) = (select extract (year from current_date))
 		group by B.package_id
 		order by count desc
 	) as T
@@ -306,8 +326,7 @@ begin
 		from (
 			select B.package_id, count(*)::int as count
 			from Buys B
-			where (select sale_start_date from Course_packages CP where CP.package_id = B.package_id) >= '2021-01-01'
-				and (select sale_start_date from Course_packages CP where CP.package_id = B.package_id) <= '2021-12-31'
+			where (select extract (year from (select sale_start_date from Course_packages CP where CP.package_id = B.package_id))) = (select extract (year from current_date))
 			group by B.package_id
 			order by count desc
 			offset N - 1
@@ -372,7 +391,7 @@ begin
 	if (registration_deadline >= (select current_date)) then
 		return new;
 	else
-		raise notice 'The registration has eneded.';
+		raise notice 'The registration has ended.';
 		return null;
 	end if;
 end;
@@ -418,7 +437,7 @@ begin
 	if (select * from get_my_course_package(new.cust_id)) is null then
 		return new;
 	else
-		raise notice 'The customer has already owned an active or pactially active package.';
+		raise notice 'The customer has already owned an active or partially active package.';
 		return null;
 	end if;
 end;
