@@ -156,14 +156,16 @@ create table Offerings(
   seating_capacity integer not null,
   target_number_registrations integer not null,
   eid integer not null,
-  unique(course_id, launch_date),      
+  unique(course_id, launch_date),
   foreign key (course_id) references Courses
     on delete cascade
     on update cascade,
   foreign key (eid) references Administrators(eid)
     on delete cascade
     on update cascade,
-  check (registration_deadline <= start_date - 10*interval '1' day)
+  check (registration_deadline <= start_date - 10*interval '1' day),
+  check(start_date<=end_date),
+  check(launch_date < registration_deadline)
 );
 
 create table Sessions(
@@ -179,7 +181,7 @@ create table Sessions(
   primary key (offering_id, sid),
   unique(session_date, start_time, eid),
   unique(offering_id, session_date, start_time),
-  unique(rid, session_date, start_time),  
+  unique(rid, session_date, start_time),
   foreign key (offering_id) references Offerings
   	on delete cascade on update cascade,
   foreign key (rid) references Rooms(rid)
@@ -187,7 +189,7 @@ create table Sessions(
   foreign key (eid) references Instructors(eid)
 	on delete cascade on update cascade,
   check ((start_time < 12 and end_time <= 12) or start_time >= 14),
-  check (extract(dow from session_date) in (1,2,3,4,5)) 
+  check (extract(dow from session_date) in (1,2,3,4,5))
 );
 
 
@@ -199,7 +201,7 @@ create table Buys(
   num_remaining_redemptions int not null,
   foreign key (cust_id, card_number) references Owns,
   foreign key (package_id) references Course_packages
-      on delete cascade 
+      on delete cascade
       on update cascade,
   primary key (buy_date, cust_id, card_number, package_id),
   check (num_remaining_redemptions >=0)
@@ -214,7 +216,7 @@ create table Registers(
   sid int,
   foreign key (cust_id, card_number) references Owns,
   foreign key (offering_id, sid) references Sessions
-      on delete cascade 
+      on delete cascade
       on update cascade,
   primary key (registration_date, cust_id, card_number, offering_id, sid)
 );
@@ -229,7 +231,7 @@ create table Redeems(
   sid int,
   foreign key (buy_date, cust_id, card_number, package_id) references Buys,
   foreign key (offering_id, sid) references Sessions
-      on delete cascade 
+      on delete cascade
       on update cascade,
   primary key (redemption_date, buy_date, cust_id, card_number, package_id, offering_id, sid)
 );
@@ -243,7 +245,7 @@ create table Cancels(
   sid int,
   foreign key (cust_id) references Customers,
   foreign key (offering_id, sid) references Sessions
-       on delete cascade 
+       on delete cascade
       on update cascade,
   primary key (cancellation_date, cust_id, sid)
 );

@@ -68,70 +68,70 @@ values ('Package 10', '2021-03-01', '2021-05-30', 5, 50.00);
 
 -- insert into Employees
 insert into Employees (phone, name, address, email, join_date) values
-('70135510', 'Lee', '209-2932 Aliquam Road', 'adipiscing.elit.Etiam@erosNam.edu', '2019-03-20'), 
-('29284051', 'Aladdin', '239-4617 A, Ave', 'gravida.molestie.arcu@lectus.org', '2019-03-25'), 
-('80099935', 'Walter', 'P.O. Box 256, 3619 Dapibus St.', 'Donec@eulacus.org', '2019-12-29'), 
-('44508629', 'Evan', 'Ap #874-2283 Amet Rd.', 'eget@aliquet.org', '2018-06-20'), 
-('18228916', 'Wanda', '923-1683 Egestas Ave', 'in@Morbivehicula.edu', '2018-08-05'), 
-('87993859', 'Raymond', '4938 Mauris Avenue', 'non.lacinia@tinciduntnuncac.co.uk', '2019-02-24'), 
-('99407414', 'Marshall', 'Ap #972-1936 Nam Street', 'Mauris@Etiam.co.uk', '2019-04-02'), 
-('12693607', 'Timothy', '2808 Accumsan Rd.', 'rutrum@musProin.net', '2017-06-20'), 
-('80786010', 'Oleg', '810-8561 Lorem Rd.', 'In.at.pede@aliquameuaccumsan.net', '2019-06-13'), 
-('58592920', 'Deirdre', '3753 Cum Road', 'amet.risus@Maecenasmalesuadafringilla.co.uk', '2019-06-30'), 
-('55748972', 'Jarrod', '7717 Ac Rd.', 'Nulla.aliquet@maurisrhoncusid.ca', '2018-02-05'), 
-('71417334', 'Micah', '1361 Justo. Ave', 'eu.ultrices@eratnonummyultricies.ca', '2019-11-27'), 
-('30235510', 'Camden', 'P.O. Box 423, 5942 Lorem Rd.', 'sed.libero@elementumpurusaccumsan.edu', '2019-02-23'), 
-('16852887', 'Lucius', '2933 Ante St.', 'Aliquam.erat@pedeetrisus.co.uk', '2018-03-09'), 
-('11861497', 'Leonard', 'P.O. Box 804, 4447 Mauris St.', 'vitae@suscipit.edu', '2017-04-26'), 
-('16399407', 'Sylvia', '487-1468 Cras Av.', 'et.magnis@etmagnis.co.uk', '2021-03-08'), 
-('76315326', 'Danielle', '639-6521 Mauris Ave', 'montes@duiFuscediam.net', '2019-05-25'), 
-('64836653', 'Fletcher', 'P.O. Box 106, 1290 Ornare, Avenue', 'nascetur@atsemmolestie.ca', '2019-03-02'), 
-('76601696', 'Keaton', '299-3992 Integer Road', 'Sed@dolor.net', '2018-09-14'), 
-('49275345', 'Lavinia', '110-8627 Lorem Street', 'egestas.Fusce.aliquet@lorem.net', '2019-09-26'), 
-('57647664', 'Lars', '721-5065 Urna. Avenue', 'penatibus.et.magnis@Praesenteu.com', '2019-07-24'), 
-('55962752', 'Evan', '137-9761 Ac Street', 'enim.Etiam.imperdiet@vitae.ca', '2019-02-26'), 
-('85237027', 'Carly', 'Ap #609-9120 Mollis Ave', 'non.justo@aliquetmolestie.ca', '2019-01-19'), 
-('74666924', 'Brynn', 'Ap #126-7452 Enim Street', 'dis@semperduilectus.ca', '2019-09-06'), 
-('27196191', 'Boris', 'Ap #159-8671 Id Ave', 'a@tinciduntnibhPhasellus.org', '2019-11-23'), 
-('43503173', 'TaShya', 'P.O. Box 257, 6325 Gravida Ave', 'libero.Proin.sed@Vivamusnisi.edu', '2019-03-01'), 
-('12966266', 'Barrett', 'P.O. Box 824, 9825 Proin Road', 'Duis.sit@musAeneaneget.co.uk', '2019-03-11'), 
-('35353014', 'Russell', '526-5212 Curabitur Av.', 'Sed.eget.lacus@fames.edu', '2019-08-18'), 
-('91779142', 'Leo', 'Ap #912-6984 Metus Avenue', 'nec.malesuada.ut@mauris.org', '2021-02-05'), 
-( '13891156', 'Jameson', '2864 Ligula Ave', 'erat@et.org', '2019-10-28'), 
-('83463147', 'Burton', 'P.O. Box 189, 9305 Vel, St.', 'ligula@interdumenim.org', '2019-12-22'), 
-('76449029', 'Cameron', '7714 Est. Av.', 'tincidunt.tempus@veliteu.net', '2019-06-01'), 
-('75305315', 'Simone', '2117 Risus, Rd.', 'Aenean@egetlacusMauris.ca', '2019-10-28'), 
-('89300583', 'Cathleen', 'Ap #479-9161 Eu, St.', 'Duis.at.lacus@Integerin.com', '2019-12-09'), 
-('29378542', 'Phelan', '3185 Et, St.', 'cubilia.Curae.Donec@adipiscingenimmi.co.uk', '2019-04-20'), 
-('73119070', 'Gretchen', '9460 Sed St.', 'ultrices.posuere.cubilia@etmagnisdis.net', '2019-09-02'), 
-('19195384', 'Tyrone', 'P.O. Box 435, 3603 Fusce Street', 'mauris.elit.dictum@euduiCum.co.uk', '2021-01-11'), 
-('82102510', 'Cailin', '976-9065 Phasellus Rd.', 'Suspendisse.ac@massarutrummagna.com', '2019-05-08'), 
-('93471849', 'Geoffrey', '9956 Eget, Road', 'Nulla.tincidunt@purus.net', '2019-08-29'), 
-('12898045', 'Odette', 'Ap #891-6197 Lacus. Avenue', 'Vivamus.molestie.dapibus@sodalesatvelit.co.uk', '2021-03-03'), 
-('46828965', 'Bryar', '623-586 Nec Av.', 'accumsan.interdum.libero@lobortismaurisSuspendisse.net', '2019-07-16'), 
-('60538182', 'Berk', '910-5660 Morbi Road', 'dis@felispurus.ca', '2019-08-29'), 
-( '32292936', 'Kennedy', '714-664 Ligula. Street', 'vitae@Nam.net', '2019-08-19'), 
-('88363649', 'Britanni', 'P.O. Box 517, 9536 Egestas Av.', 'et@Mauris.edu', '2019-04-01'), 
-('57602392', 'Graiden', '930-3412 Curae; Avenue', 'nunc.sed.libero@ligulaAenean.ca', '2021-03-08'), 
-('15741108', 'Vance', 'P.O. Box 526, 811 Nec, Ave', 'vitae@orciUt.edu', '2019-03-18'), 
-('37785477', 'Idona', 'Ap #623-6544 Erat Avenue', 'nisi@sollicitudinorci.co.uk', '2019-04-20'), 
-('13079815', 'Jennifer', 'Ap #232-5457 Mollis St.', 'amet.massa.Quisque@mattisornarelectus.co.uk', '2018-05-20'), 
-('54081231', 'Wing', 'Ap #753-2391 Montes, Rd.', 'diam@nisi.co.uk', '2019-08-29'), 
-('80644709', 'Guy', 'Ap #397-6021 Rutrum, Rd.', 'aliquet@tempordiam.co.uk', '2010-02-27'), 
-('18330530', 'Kelly', 'Ap #792-9575 Proin Rd.', 'elementum@Nullamnisl.co.uk', '2019-06-29'), 
-('69878236', 'Bell', '644-7093 A Street', 'Aliquam.ultrices@Fuscemollis.ca', '2019-09-06'), 
-( '74579441', 'Michael', '5003 Rutrum Av.', 'faucibus.orci@anteipsumprimis.edu', '2019-10-27'), 
-('38384509', 'Hasad', 'P.O. Box 877, 2308 Sit Rd.', 'Vivamus.sit@Suspendissenon.ca', '2019-05-24'), 
-('23464556', 'Emi', '446-9128 Id, Ave', 'morbi@velitin.org', '2019-04-18'), 
-( '60249359', 'Leroy', 'Ap #349-8979 Egestas Street', 'sagittis.augue.eu@nectempus.net', '2019-01-25'), 
-( '65299859', 'Ahmed', '934-1173 Placerat St.', 'lorem.Donec.elementum@varius.edu', '2019-07-26'), 
-( '96931976', 'Owen', 'Ap #574-2224 Morbi St.', 'nec@eratsemper.net', '2019-07-04'), 
-('23713213', 'Jermaine', '8816 Pulvinar Rd.', 'mattis.semper@imperdietdictummagna.net', '2019-10-20'), 
+('70135510', 'Lee', '209-2932 Aliquam Road', 'adipiscing.elit.Etiam@erosNam.edu', '2019-03-20'),
+('29284051', 'Aladdin', '239-4617 A, Ave', 'gravida.molestie.arcu@lectus.org', '2019-03-25'),
+('80099935', 'Walter', 'P.O. Box 256, 3619 Dapibus St.', 'Donec@eulacus.org', '2019-12-29'),
+('44508629', 'Evan', 'Ap #874-2283 Amet Rd.', 'eget@aliquet.org', '2018-06-20'),
+('18228916', 'Wanda', '923-1683 Egestas Ave', 'in@Morbivehicula.edu', '2018-08-05'),
+('87993859', 'Raymond', '4938 Mauris Avenue', 'non.lacinia@tinciduntnuncac.co.uk', '2019-02-24'),
+('99407414', 'Marshall', 'Ap #972-1936 Nam Street', 'Mauris@Etiam.co.uk', '2019-04-02'),
+('12693607', 'Timothy', '2808 Accumsan Rd.', 'rutrum@musProin.net', '2017-06-20'),
+('80786010', 'Oleg', '810-8561 Lorem Rd.', 'In.at.pede@aliquameuaccumsan.net', '2019-06-13'),
+('58592920', 'Deirdre', '3753 Cum Road', 'amet.risus@Maecenasmalesuadafringilla.co.uk', '2019-06-30'),
+('55748972', 'Jarrod', '7717 Ac Rd.', 'Nulla.aliquet@maurisrhoncusid.ca', '2018-02-05'),
+('71417334', 'Micah', '1361 Justo. Ave', 'eu.ultrices@eratnonummyultricies.ca', '2019-11-27'),
+('30235510', 'Camden', 'P.O. Box 423, 5942 Lorem Rd.', 'sed.libero@elementumpurusaccumsan.edu', '2019-02-23'),
+('16852887', 'Lucius', '2933 Ante St.', 'Aliquam.erat@pedeetrisus.co.uk', '2018-03-09'),
+('11861497', 'Leonard', 'P.O. Box 804, 4447 Mauris St.', 'vitae@suscipit.edu', '2017-04-26'),
+('16399407', 'Sylvia', '487-1468 Cras Av.', 'et.magnis@etmagnis.co.uk', '2021-03-08'),
+('76315326', 'Danielle', '639-6521 Mauris Ave', 'montes@duiFuscediam.net', '2019-05-25'),
+('64836653', 'Fletcher', 'P.O. Box 106, 1290 Ornare, Avenue', 'nascetur@atsemmolestie.ca', '2019-03-02'),
+('76601696', 'Keaton', '299-3992 Integer Road', 'Sed@dolor.net', '2018-09-14'),
+('49275345', 'Lavinia', '110-8627 Lorem Street', 'egestas.Fusce.aliquet@lorem.net', '2019-09-26'),
+('57647664', 'Lars', '721-5065 Urna. Avenue', 'penatibus.et.magnis@Praesenteu.com', '2019-07-24'),
+('55962752', 'Evan', '137-9761 Ac Street', 'enim.Etiam.imperdiet@vitae.ca', '2019-02-26'),
+('85237027', 'Carly', 'Ap #609-9120 Mollis Ave', 'non.justo@aliquetmolestie.ca', '2019-01-19'),
+('74666924', 'Brynn', 'Ap #126-7452 Enim Street', 'dis@semperduilectus.ca', '2019-09-06'),
+('27196191', 'Boris', 'Ap #159-8671 Id Ave', 'a@tinciduntnibhPhasellus.org', '2019-11-23'),
+('43503173', 'TaShya', 'P.O. Box 257, 6325 Gravida Ave', 'libero.Proin.sed@Vivamusnisi.edu', '2019-03-01'),
+('12966266', 'Barrett', 'P.O. Box 824, 9825 Proin Road', 'Duis.sit@musAeneaneget.co.uk', '2019-03-11'),
+('35353014', 'Russell', '526-5212 Curabitur Av.', 'Sed.eget.lacus@fames.edu', '2019-08-18'),
+('91779142', 'Leo', 'Ap #912-6984 Metus Avenue', 'nec.malesuada.ut@mauris.org', '2021-02-05'),
+( '13891156', 'Jameson', '2864 Ligula Ave', 'erat@et.org', '2019-10-28'),
+('83463147', 'Burton', 'P.O. Box 189, 9305 Vel, St.', 'ligula@interdumenim.org', '2019-12-22'),
+('76449029', 'Cameron', '7714 Est. Av.', 'tincidunt.tempus@veliteu.net', '2019-06-01'),
+('75305315', 'Simone', '2117 Risus, Rd.', 'Aenean@egetlacusMauris.ca', '2019-10-28'),
+('89300583', 'Cathleen', 'Ap #479-9161 Eu, St.', 'Duis.at.lacus@Integerin.com', '2019-12-09'),
+('29378542', 'Phelan', '3185 Et, St.', 'cubilia.Curae.Donec@adipiscingenimmi.co.uk', '2019-04-20'),
+('73119070', 'Gretchen', '9460 Sed St.', 'ultrices.posuere.cubilia@etmagnisdis.net', '2019-09-02'),
+('19195384', 'Tyrone', 'P.O. Box 435, 3603 Fusce Street', 'mauris.elit.dictum@euduiCum.co.uk', '2021-01-11'),
+('82102510', 'Cailin', '976-9065 Phasellus Rd.', 'Suspendisse.ac@massarutrummagna.com', '2019-05-08'),
+('93471849', 'Geoffrey', '9956 Eget, Road', 'Nulla.tincidunt@purus.net', '2019-08-29'),
+('12898045', 'Odette', 'Ap #891-6197 Lacus. Avenue', 'Vivamus.molestie.dapibus@sodalesatvelit.co.uk', '2021-03-03'),
+('46828965', 'Bryar', '623-586 Nec Av.', 'accumsan.interdum.libero@lobortismaurisSuspendisse.net', '2019-07-16'),
+('60538182', 'Berk', '910-5660 Morbi Road', 'dis@felispurus.ca', '2019-08-29'),
+( '32292936', 'Kennedy', '714-664 Ligula. Street', 'vitae@Nam.net', '2019-08-19'),
+('88363649', 'Britanni', 'P.O. Box 517, 9536 Egestas Av.', 'et@Mauris.edu', '2019-04-01'),
+('57602392', 'Graiden', '930-3412 Curae; Avenue', 'nunc.sed.libero@ligulaAenean.ca', '2021-03-08'),
+('15741108', 'Vance', 'P.O. Box 526, 811 Nec, Ave', 'vitae@orciUt.edu', '2019-03-18'),
+('37785477', 'Idona', 'Ap #623-6544 Erat Avenue', 'nisi@sollicitudinorci.co.uk', '2019-04-20'),
+('13079815', 'Jennifer', 'Ap #232-5457 Mollis St.', 'amet.massa.Quisque@mattisornarelectus.co.uk', '2018-05-20'),
+('54081231', 'Wing', 'Ap #753-2391 Montes, Rd.', 'diam@nisi.co.uk', '2019-08-29'),
+('80644709', 'Guy', 'Ap #397-6021 Rutrum, Rd.', 'aliquet@tempordiam.co.uk', '2010-02-27'),
+('18330530', 'Kelly', 'Ap #792-9575 Proin Rd.', 'elementum@Nullamnisl.co.uk', '2019-06-29'),
+('69878236', 'Bell', '644-7093 A Street', 'Aliquam.ultrices@Fuscemollis.ca', '2019-09-06'),
+( '74579441', 'Michael', '5003 Rutrum Av.', 'faucibus.orci@anteipsumprimis.edu', '2019-10-27'),
+('38384509', 'Hasad', 'P.O. Box 877, 2308 Sit Rd.', 'Vivamus.sit@Suspendissenon.ca', '2019-05-24'),
+('23464556', 'Emi', '446-9128 Id, Ave', 'morbi@velitin.org', '2019-04-18'),
+( '60249359', 'Leroy', 'Ap #349-8979 Egestas Street', 'sagittis.augue.eu@nectempus.net', '2019-01-25'),
+( '65299859', 'Ahmed', '934-1173 Placerat St.', 'lorem.Donec.elementum@varius.edu', '2019-07-26'),
+( '96931976', 'Owen', 'Ap #574-2224 Morbi St.', 'nec@eratsemper.net', '2019-07-04'),
+('23713213', 'Jermaine', '8816 Pulvinar Rd.', 'mattis.semper@imperdietdictummagna.net', '2019-10-20'),
 ( '72222592', 'Knox', '7780 Sem Rd.', 'mollis@montesnasceturridiculus.ca', '2019-10-17');
 
 
 -- insert into Full_time_emp
-insert into Full_time_emp (eid, monthly_salary) values 
+insert into Full_time_emp (eid, monthly_salary) values
 (1, 623.28),
 (2, 515.23),
 (3, 760.22),
@@ -203,7 +203,7 @@ insert into Administrators (eid) values (11), (12), (13), (14), (15), (16), (17)
 insert into Managers (eid) values (21), (22), (23), (24), (25), (26), (27), (28), (29), (30);
 
 -- insert into Instructors
-insert into Instructors (eid) values 
+insert into Instructors (eid) values
 (1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (41), (42), (43), (44), (45), (46), (47), (48), (49), (50);
 
 -- insert into Full_time_instructors
@@ -211,7 +211,7 @@ insert into Full_time_instructors (eid) values
 (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
 
 -- insert into Part_time_instructors
-insert into Part_time_instructors (eid) values 
+insert into Part_time_instructors (eid) values
 (41), (42), (43), (44), (45), (46), (47), (48), (49), (50);
 
 -- insert into Course_areas
@@ -228,24 +228,24 @@ insert into Course_areas (area_name, eid) values ('Media Computing', 22);
 
 
 -- insert into Specializes
-insert into Specializes (eid, area_name) values (10, 'Computer Security');  
-insert into Specializes (eid, area_name) values (3, 'Computer Security');  
-insert into Specializes (eid, area_name) values (48, 'Software Engineering');  
-insert into Specializes (eid, area_name) values (4, 'Software Engineering');  
-insert into Specializes (eid, area_name) values (10, 'Database Systems');  
+insert into Specializes (eid, area_name) values (10, 'Computer Security');
+insert into Specializes (eid, area_name) values (3, 'Computer Security');
+insert into Specializes (eid, area_name) values (48, 'Software Engineering');
+insert into Specializes (eid, area_name) values (4, 'Software Engineering');
+insert into Specializes (eid, area_name) values (10, 'Database Systems');
 insert into Specializes (eid, area_name) values (2, 'Database Systems');
-insert into Specializes (eid, area_name) values (8, 'Computer Security');  
+insert into Specializes (eid, area_name) values (8, 'Computer Security');
 insert into Specializes (eid, area_name) values (43, 'Computer Security');
 insert into Specializes (eid, area_name) values (6, 'Software Engineering');
-insert into Specializes (eid, area_name) values (8, 'Software Engineering');  
-insert into Specializes (eid, area_name) values (46, 'Software Engineering');  
-insert into Specializes (eid, area_name) values (41, 'Data Structures and Algorithms');  
-insert into Specializes (eid, area_name) values (4, 'Data Structures and Algorithms'); 
-insert into Specializes (eid, area_name) values (1, 'Operating Systems'); 
+insert into Specializes (eid, area_name) values (8, 'Software Engineering');
+insert into Specializes (eid, area_name) values (46, 'Software Engineering');
+insert into Specializes (eid, area_name) values (41, 'Data Structures and Algorithms');
+insert into Specializes (eid, area_name) values (4, 'Data Structures and Algorithms');
+insert into Specializes (eid, area_name) values (1, 'Operating Systems');
 insert into Specializes (eid, area_name) values (6, 'Operating Systems');
-insert into Specializes (eid, area_name) values (45, 'Machine Learning');  
+insert into Specializes (eid, area_name) values (45, 'Machine Learning');
 insert into Specializes (eid, area_name) values (5, 'Machine Learning');
-insert into Specializes (eid, area_name) values (49, 'Parallel Programming');   
+insert into Specializes (eid, area_name) values (49, 'Parallel Programming');
 insert into Specializes (eid, area_name) values (9, 'Parallel Programming');
 
 
@@ -286,42 +286,78 @@ insert into Courses (course_id, title, duration, description, area_name) values 
 
 
 -- insert into Offerings
-insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (1, '2021-01-22', 14, 489.34, '2021-03-13', '2021-08-07', '2021-02-23', 51, 50, 19);
-insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (2, '2021-02-02', 12, 373.73, '2021-05-19', '2021-11-10', '2021-04-18', 53, 52, 14);
+insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (1, '2021-01-22', 14, 489.34, '2021-03-15', '2021-08-09', '2021-02-23', 51, 50, 19);
+insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (2, '2021-02-02', 12, 373.73, '2021-04-12', '2021-11-10', '2021-03-30', 53, 52, 14);
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (3, '2021-01-28', 7, 421.75, '2021-11-19', '2021-12-30', '2021-04-01', 99, 98, 16);
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (4, '2021-02-17', 14, 348.19, '2021-06-03', '2021-08-03', '2021-04-23', 74, 70, 18);
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (5, '2021-02-12', 12, 240.31, '2021-05-21', '2021-06-29', '2021-03-25', 116, 100, 20);
-insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (6, '2021-01-07', 13, 383.29, '2021-10-09', '2021-12-31', '2021-02-27', 122, 111, 18);
+insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (6, '2021-01-07', 13, 383.29, '2021-10-11', '2021-12-31', '2021-02-27', 122, 111, 18);
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (7, '2021-02-17', 1, 442.84, '2021-04-29', '2021-10-22', '2021-03-30', 92, 91, 20);
-insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (8, '2021-02-20', 20, 349.04, '2021-09-23', '2021-04-14', '2021-07-27', 87, 85, 13);
+insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (8, '2021-02-20', 20, 349.04, '2021-04-14', '2021-09-23', '2021-03-27', 87, 85, 13);
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (9, '2021-01-16', 16, 485.04, '2021-04-13', '2021-04-27', '2021-03-26', 143, 140, 20);
 insert into Offerings (offering_id, launch_date, course_id, fees, start_date, end_date, registration_deadline, seating_capacity, target_number_registrations, eid) values (10, '2021-02-16', 10, 341.78, '2021-07-02', '2021-12-20', '2021-06-20', 56, 55, 20);
 
 
 
 -- insert into Sessions
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-03-13', 14, 17, 2, 10, 1);   
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-08-07', 9, 12,  4, 3, 1);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-05-19', 9, 11,  1, 48, 2); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-11-10', 10, 12,  2, 4, 2);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-11-19', 15, 17, 3, 10, 3); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-30', 14, 16, 2, 2, 3);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-06-03', 14, 17, 4, 8, 4); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-08-03', 15, 18, 8, 43, 4); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-05-21', 14, 16,  3, 4, 5);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-06-29', 15, 17, 7, 6, 5); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-10-09', 15, 16, 8, 8, 6); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-31', 15, 16, 3, 46, 6);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-04-29', 9, 11, 10, 41, 7); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-10-22', 16, 18, 8, 4, 7); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-09-23', 15, 17, 6, 1, 8);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-04-14', 10, 12, 4, 6, 8); 
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-04-13', 14, 17,  3, 45, 9);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-04-27', 9, 12, 9, 5, 9);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-07-02', 14, 17,  1, 49, 10);  
-insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-20', 9, 12,  4, 9, 10); 
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-03-15', 14, 17, 2, 10, 1);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-08-09', 9, 12, 4, 3, 1);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-04-12', 9, 11, 1, 48, 2);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-11-10', 10, 12, 2, 4, 2);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-11-19', 15, 17, 3, 10, 3);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-30', 14, 16, 2, 2, 3);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-06-03', 14, 17, 4, 8, 4);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-08-03', 15, 18, 8, 43, 4);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-05-21', 14, 16, 3, 4, 5);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-06-29', 15, 17, 7, 6, 5);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-10-11', 15, 16, 8, 8, 6);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-31', 15, 16, 3, 46, 6);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-04-29', 9, 11, 10, 41, 7);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-10-22', 16, 18, 8, 4, 7);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-09-23', 15, 17, 6, 1, 8);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-04-14', 10, 12, 4, 6, 8);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-04-13', 14, 17,  3, 45, 9);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-04-27', 9, 12, 9, 5, 9);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (1, '2021-07-02', 14, 17,  1, 49, 10);
+insert into Sessions (sid, session_date, start_time, end_time, rid, eid, offering_id) values (2, '2021-12-20', 9, 12,  4, 9, 10);
 
 -- insert into Registers
-insert into Registers ()
+insert into Registers (registration_date, card_number, cust_id, offering_id, sid) values
+('2021-01-01', '4470361716237', 1, 1, 1),
+('2021-01-10', '4470361716237', 1, 2, 2),
+('2021-01-20', '4470361716237', 1, 3, 1),
+('2021-01-04', '4532601368531', 2, 1, 1),
+('2021-02-02', '4532601368531', 2, 2, 2),
+('2021-03-01', '4532601368531', 2, 3, 2),
+('2021-03-03', '4532601368531', 2, 4, 2),
+('2021-02-01', '4929695056073', 3, 1, 2),
+('2021-03-05', '4929695056073', 3, 2, 1);
+
+-- insert into Buys
+insert into Buys (buy_date, package_id, card_number, cust_id, num_remaining_redemptions) values
+('2021-03-02', 1, '4470361716237', 1, 10),
+('2021-03-05', 2, '4532601368531', 2, 10),
+('2021-03-06', 3, '4929695056073', 3, 15),
+('2021-03-04', 9, '4532141317790', 4, 3),
+('2021-03-04', 9, '4929521169516262', 5, 3),
+('2021-03-04', 9, '4539530426470074', 6, 3);
+
+-- insert into Redeems;
+insert into Redeems(redemption_date, buy_date, package_id, card_number, cust_id, offering_id, sid) values
+('2021-03-10', '2021-03-02', 1, '4470361716237', 1, 4, 1),
+('2021-03-15', '2021-03-02', 1, '4470361716237', 1, 5, 1),
+('2021-03-06', '2021-03-05', 2, '4532601368531', 2, 5, 1),
+('2021-03-05', '2021-03-04', 9, '4532141317790', 4, 2, 1),
+('2021-03-05', '2021-03-04', 9, '4532141317790', 4, 8, 2),
+('2021-03-05', '2021-03-04', 9, '4532141317790', 4, 9, 1),
+('2021-03-05', '2021-03-04', 9, '4929521169516262', 5, 2, 1),
+('2021-03-05', '2021-03-04', 9, '4929521169516262', 5, 4, 1),
+('2021-03-05', '2021-03-04', 9, '4929521169516262', 5, 10, 1),
+('2021-03-05', '2021-03-04', 9, '4539530426470074', 6, 2, 1),
+('2021-03-05', '2021-03-04', 9, '4539530426470074', 6, 3, 1),
+('2021-03-05', '2021-03-04', 9, '4539530426470074', 6, 5, 1);
+
+update Buys set num_remaining_redemptions = 0
+where cust_id = 4 or cust_id = 5 or cust_id = 6;
 
 

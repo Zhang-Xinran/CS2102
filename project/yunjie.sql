@@ -122,13 +122,6 @@ CREATE TRIGGER insert_session_check_eid_trigger
 BEFORE INSERT ON Sessions
 FOR EACH ROW EXECUTE FUNCTION insert_session_check_eid_func();
 
-
-
-
-
-
-
-
 CREATE OR REPLACE FUNCTION insert_session_check_room_func() RETURNS TRIGGER AS $$
 BEGIN
    IF NEW.rid in (
@@ -145,11 +138,6 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER insert_session_check_room_trigger
 BEFORE INSERT ON Sessions
 FOR EACH ROW EXECUTE FUNCTION insert_session_check_room_func();
-
-
-
-
-
 
 CREATE OR REPLACE FUNCTION insert_offering_check_date_func() RETURNS TRIGGER AS $$
 BEGIN
@@ -171,12 +159,6 @@ $$ LANGUAGE plpgsql;
 CREATE TRIGGER insert_offering_check_date_trigger
 BEFORE INSERT ON Offerings
 FOR EACH ROW EXECUTE FUNCTION insert_offering_check_date_func();
-
-
-
-
-
-
 
 CREATE OR REPLACE FUNCTION insert_offering_check_admin_func() RETURNS TRIGGER AS $$
 BEGIN
