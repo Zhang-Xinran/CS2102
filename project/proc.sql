@@ -1294,7 +1294,7 @@ BEGIN
     );
 
     INSERT INTO Countings(m_name, area_managed, offerings_end_this_year, net_fees_this_year)
-        select E.name, COUNT(DISTINCT C.area_name), COUNT(O.course_id), coalesce(SUM(RF1.fees),0)+coalesce(SUM(RF2.fees),0)-coalesce(SUM(CN.refund_amount),0)
+        select E.name, COUNT(DISTINCT C.area_name), COUNT(DISTINCT O.course_id), coalesce(SUM(RF1.fees),0)+coalesce(SUM(RF2.fees),0)-coalesce(SUM(CN.refund_amount),0)
         from Managers M join Employees E on M.eid = E.eid
         left join Course_areas CA on M.eid = CA.eid
         left join Courses C on CA.area_name = C.area_name
