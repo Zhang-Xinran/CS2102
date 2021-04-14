@@ -952,7 +952,7 @@ BEGIN
      RAISE NOTICE 'Date early than/too close to register deadline';
      ELSIF (new_rid NOT IN  (select * from find_rooms (new_day, start_hour, duration_time))) THEN
      RAISE NOTICE 'Room not available';
-     ELSIF (start_hour+duration_time > 12 OR start_hour+duration_time>18) THEN
+     ELSIF ((start_hour<12 AND start_hour+duration_time > 12) OR (start_hour>=14  AND start_hour+duration_time>18)  THEN
      RAISE NOTICE 'Session not able to conduct at this time';
      ELSE
      INSERT INTO Sessions
